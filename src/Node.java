@@ -34,26 +34,20 @@ public class Node {
     }
 
     public boolean contains(int value) {
-        System.out.println(value);
-        System.out.println(this.value);
-        System.out.println("---");
-
         if (this.value == value) {
             return true;
         }
 
         if (this.value > value) {
-            if (this.left == null) {
-                return false;
-            } else {
+            if (this.left != null) {
                 return this.left.contains(value);
             }
         } else {
-            if (this.right == null) {
-                return false;
-            } else {
+            if (this.right != null) {
                 return this.right.contains(value);
             }
         }
+
+        return false;
     }
 }
