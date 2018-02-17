@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class NodeTest {
     private Node tree;
@@ -17,6 +17,11 @@ public class NodeTest {
         tree.add(4);
     }
 
+    @AfterEach
+    public void afterEach() {
+        this.tree = null;
+    }
+
     @Test
     public void testAdd() {
         assertEquals(8, tree.value);
@@ -27,5 +32,23 @@ public class NodeTest {
         assertEquals(12, tree.right.left.value);
         assertEquals(20, tree.right.right.value);
         assertEquals(4, tree.left.left.right.value);
+    }
+
+    @Test
+    public void testContains() {
+        assertTrue(tree.contains(8));
+        assertTrue(tree.contains(5));
+        assertTrue(tree.contains(17));
+        assertTrue(tree.contains(2));
+        assertTrue(tree.contains(7));
+        assertTrue(tree.contains(12));
+        assertTrue(tree.contains(20));
+        assertTrue(tree.contains(4));
+
+        assertFalse(tree.contains(10));
+        assertFalse(tree.contains(1));
+        assertFalse(tree.contains(70));
+        assertFalse(tree.contains(65));
+        assertFalse(tree.contains(90));
     }
 }
