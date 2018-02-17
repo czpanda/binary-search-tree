@@ -51,6 +51,21 @@ public class Node {
         return false;
     }
 
+    public int depth() {
+        if (this.left == null && this.right == null) {
+            return 1;
+        } else if (this.left == null) {
+            return 1 + this.right.depth();
+        } else if (this.right == null) {
+            return 1 + this.left.depth();
+        } else {
+            int leftDepth = 1 + this.left.depth();
+            int rightDepth = 1 + this.right.depth();
+
+            return Math.max(leftDepth, rightDepth);
+        }
+    }
+
     @Override
     public String toString(){
         if (this.left == null && this.right == null) {

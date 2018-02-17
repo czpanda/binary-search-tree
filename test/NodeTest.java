@@ -53,6 +53,11 @@ public class NodeTest {
     }
 
     @Test
+    public void testDepth() {
+        assertEquals(4, tree.depth());
+    }
+
+    @Test
     public void testToString() {
         assertEquals("2-4-5-7-8-12-17-20", tree.toString());
     }
