@@ -51,4 +51,9 @@ public class NodeTest {
         assertFalse(tree.contains(65));
         assertFalse(tree.contains(90));
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("2-4-5-7-8-12-17-20", tree.toString());
+    }
 }

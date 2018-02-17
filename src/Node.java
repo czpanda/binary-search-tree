@@ -50,4 +50,18 @@ public class Node {
 
         return false;
     }
+
+    @Override
+    public String toString(){
+        if (this.left == null && this.right == null) {
+            return Integer.toString(this.value);
+        } else if (this.left == null) {
+            return Integer.toString(this.value) + "-" + this.right.toString();
+        } else if (this.right == null) {
+            return Integer.toString(this.value) + "-" + this.left.toString();
+        } else {
+            return this.left.toString() + "-" + Integer.toString(this.value) + "-" + this.right.toString();
+        }
+    }
+
 }
