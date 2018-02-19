@@ -66,6 +66,14 @@ public class Node {
         }
     }
 
+    public int min() {
+        if (this.left == null) {
+            return this.value;
+        }
+
+        return this.left.min();
+    }
+
     @Override
     public String toString(){
         if (this.left == null && this.right == null) {

@@ -120,4 +120,16 @@ public class NodeTest {
         // Third tree asserts
         assertEquals("50", thirdTree.toString());
     }
+
+    @Test
+    public void testMin() {
+        // First tree asserts
+        assertEquals(0, firstTree.min());
+
+        // Second tree asserts
+        assertEquals(2, secondTree.min());
+
+        // Third tree asserts
+        assertEquals(50, thirdTree.min());
+    }
 }
