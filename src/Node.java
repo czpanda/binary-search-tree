@@ -14,7 +14,7 @@ public class Node {
          * Skip value if it already exists in a tree
          */
         if (this.value == value) {
-            System.out.print("Value already exists in a tree, therefore it will be skipped.");
+            System.out.println("Value already exists in a tree, therefore it will be skipped.");
             return;
         }
 
